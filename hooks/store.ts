@@ -1,7 +1,7 @@
 import { provide, inject, ref, computed } from 'vue'
 
 const api =
-    'https://raw.githubusercontent.com/zzetao/awesome-github-profile/master/data.json'
+    'https://raw.githubusercontent.com/zzetao/awesome-github-profile-data/master/data.json'
 
 interface IProfile {
     githubUrl: string
@@ -30,7 +30,7 @@ interface IStore {
 
 const StoreSymbol = Symbol('Store')
 const convertImageUrl = (path) =>
-    `https://raw.githubusercontent.com/zzetao/awesome-github-profile/master/${path}`
+    `https://raw.githubusercontent.com/zzetao/awesome-github-profile-data/master/${path}`
 const defaultCategories = [
     { categoryName: 'All', list: [] },
     { categoryName: 'Github Actions 🤖', list: [] },
@@ -65,7 +65,7 @@ export const useStoreProvide = () => {
             return (
                 categories.value.find(
                     (c) => c.categoryName === selectedCategory.value
-                )?.list || []
+                ).list || []
             )
         }
     })
