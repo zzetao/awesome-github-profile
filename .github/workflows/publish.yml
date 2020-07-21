@@ -21,9 +21,8 @@ jobs:
       with:
         node-version: 14.x
 
-    - name: Build
-      uses: actions/checkout@v2
-      run: yarn && yarn build
+    - uses: actions/checkout@v2
+    - run: yarn && yarn build
 
     - name: Checkout Branch
       uses: actions/checkout@v2
