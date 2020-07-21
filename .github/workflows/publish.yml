@@ -1,4 +1,4 @@
-name: Capture
+name: Publish
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -22,12 +22,12 @@ jobs:
         node-version: 14.x
 
     - uses: actions/checkout@v2
-    - run: yarn && yarn build
+
+    - name: Build
+      run: yarn && yarn build
 
     - name: Checkout Branch
-      uses: actions/checkout@v2
-      with:
-        ref: gh-pages
+      run: git checkout gh-page && git pull
 
     - name: Move assets
       run: rm -rf assets/ index.html && mv dist/index.html . && mv dist/assets .
