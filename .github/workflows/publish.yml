@@ -36,4 +36,4 @@ jobs:
       run: git config --global user.email "i.zzetao@gmail.com" && git config --global user.name "Bot"
 
     - name: Publish
-      run: git status && git add index.html assets/* && git commit -m "Publish page"
+      run: git status && git add index.html assets/* && git commit -m "Publish page" && git push --set-upstream origin gh-pages
