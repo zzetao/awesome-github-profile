@@ -32,5 +32,8 @@ jobs:
     - name: Move assets
       run: rm -rf assets/ index.html && mv dist/index.html . && mv dist/assets .
 
+    - name: Git
+      run: git config --global user.email "i.zzetao@gmail.com" && git config --global user.name "Bot"
+
     - name: Publish
-      run: git status && git add index.html assets/* && git commit -m "Publish page" --author="Bot <i.zzetao@gmail.com>"
+      run: git status && git add index.html assets/* && git commit -m "Publish page"
