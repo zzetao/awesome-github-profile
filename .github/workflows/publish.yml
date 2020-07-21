@@ -33,9 +33,4 @@ jobs:
       run: rm -rf assets/ index.html && mv dist/index.html . && mv dist/assets .
 
     - name: Publish
-      uses: EndBug/add-and-commit@v4
-      with:
-        author_name: Bot
-        author_email: i.zzetao@gmail.com
-        message: "Publish page"
-        add: "."
+      run: git status && git add index.html assets/* && git commit -m "Publish page" --author="Bot <i.zzetao@gmail.com>"
