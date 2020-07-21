@@ -16,27 +16,27 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 14.x
-      - uses: actions/checkout@v2
-      - run: yarn
-      - run: yarn build
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    - uses: actions/checkout@v2
+    - run: yarn
+    - run: yarn build
 
-      - name: Checkout Branch
-      - uses: actions/checkout@v2
-        with:
-          ref: gh-pages
+    - name: Checkout Branch
+    - uses: actions/checkout@v2
+      with:
+        ref: gh-pages
 
-      - name: Move assets
-        run: rm -rf assets/ index.html
-        run: mv dist/index.html .
-        run: mv dist/assets .
+    - name: Move assets
+      run: rm -rf assets/ index.html
+      run: mv dist/index.html .
+      run: mv dist/assets .
 
-      - name: Publish
-        uses: EndBug/add-and-commit@v4
-        with:
-          author_name: Bot
-          author_email: i.zzetao@gmail.com
-          message: "Publish page"
-          add: "."
+    - name: Publish
+      uses: EndBug/add-and-commit@v4
+      with:
+        author_name: Bot
+        author_email: i.zzetao@gmail.com
+        message: "Publish page"
+        add: "."
