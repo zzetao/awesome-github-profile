@@ -1,5 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import installLazyLoadDirective from './libs/lazyload.directive.ts'
 import './components/normalize.css'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+installLazyLoadDirective(app)
+
+app.mount('#app')
