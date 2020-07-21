@@ -2,19 +2,22 @@
   <div class="main">
     <Header />
     <Content />
+    <StarTip />
   </div>
 </template>
 
 <script lang="ts">
 import Header from './components/Header.vue'
 import Content from './components/Content.vue'
+import StarTip from './components/StarTip.vue'
 import { useStoreProvide, useStoreInject } from './hooks/store'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Content
+    Content,
+    StarTip
   },
   setup() {
     useStoreProvide()
