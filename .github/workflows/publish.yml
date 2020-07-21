@@ -5,7 +5,7 @@ name: Capture
 on:
   push:
     branches:
-      - master
+    - master
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -16,22 +16,22 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - name: Environment
     - uses: actions/setup-node@v1
       with:
         node-version: 14.x
-    - uses: actions/checkout@v2
-    - run: yarn
-    - run: yarn build
+
+    - name: Build
+      uses: actions/checkout@v2
+      run: yarn && yarn build
 
     - name: Checkout Branch
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
       with:
         ref: gh-pages
 
     - name: Move assets
-      run: rm -rf assets/ index.html
-      run: mv dist/index.html .
-      run: mv dist/assets .
+      run: rm -rf assets/ index.html && mv dist/index.html . && mv dist/assets .
 
     - name: Publish
       uses: EndBug/add-and-commit@v4
