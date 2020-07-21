@@ -24,16 +24,30 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Build
-      run: yarn && yarn build
+      run: |
+        yarn
+        yarn build
 
     - name: Checkout Branch
-      run: git reset --hard && git fetch origin gh-pages && git checkout gh-pages
+      run: |
+        git reset --hard
+        git fetch origin gh-pages
+        git checkout gh-pages
 
     - name: Move assets
-      run: rm -rf assets/ index.html && mv dist/index.html . && mv dist/assets .
+      run: |
+        rm -rf _assets/ index.html
+        mv dist/index.html .
+        mv dist/_assets .
 
     - name: Git
-      run: git config --global user.email "i.zzetao@gmail.com" && git config --global user.name "Bot"
+      run: |
+        git config --global user.email "i.zzetao@gmail.com"
+        git config --global user.name "Bot"
 
     - name: Publish
-      run: git status && git add index.html assets/* && git commit -m "Publish page" && git push --set-upstream origin gh-pages
+      run: |
+        git status
+        git add index.html _assets/*
+        git commit -m "Publish page"
+        git push --set-upstream origin gh-pages
