@@ -27,7 +27,7 @@ jobs:
       run: yarn && yarn build
 
     - name: Checkout Branch
-      run: git checkout gh-pages && git pull
+      run: git fetch origin gh-pages && git checkout gh-pages && git pull
 
     - name: Move assets
       run: rm -rf assets/ index.html && mv dist/index.html . && mv dist/assets .
