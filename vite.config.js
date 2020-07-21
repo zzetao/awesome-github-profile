@@ -1,3 +1,1 @@
-module.exports = {
-    BASE: '/awesome-github-profile/'
-}
+module.exports = {}

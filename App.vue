@@ -30,5 +30,8 @@ export default {
 <style lang="less">
   body {
     background-color: #F9F9F9;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 </style>
