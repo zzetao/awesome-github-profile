@@ -9,7 +9,7 @@ export default {}
 <style lang="less">
 .github-link {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 3em;
     right: -6.5em;
     padding: 1em;
