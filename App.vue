@@ -1,9 +1,9 @@
 <template>
-  <div class="main">
-    <Header />
-    <Content />
-    <StarTip />
-  </div>
+    <div class="main">
+        <Header />
+        <Content />
+        <StarTip />
+    </div>
 </template>
 
 <script lang="ts">
@@ -13,28 +13,28 @@ import StarTip from './components/StarTip.vue'
 import { useStoreProvide, useStoreInject } from './hooks/store'
 
 export default {
-  name: 'App',
-  components: {
-    Header,
-    Content,
-    StarTip
-  },
-  setup() {
-    useStoreProvide()
-    const { fetchCategories } = useStoreInject()
+    name: 'App',
+    components: {
+        Header,
+        Content,
+        StarTip,
+    },
+    setup() {
+        useStoreProvide()
+        const { fetchCategories } = useStoreInject()
 
-    fetchCategories()
+        fetchCategories()
 
-    return {}
-  }
+        return {}
+    },
 }
 </script>
 
 <style lang="less">
-  body {
-    background-color: #F9F9F9;
+body {
+    background-color: #f9f9f9;
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
+}
 </style>
