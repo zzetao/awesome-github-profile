@@ -3,7 +3,6 @@
         class="profile-item"
         :href="profile.githubUrl"
         target="_blank"
-        @mouseenter="setImageHeight"
     >
         <div class="mask">
             <h3 class="nickname">{{ profile.nickName }}</h3>
@@ -13,8 +12,7 @@
         <img
             v-lazyload="profile.previewImageUrl"
             :alt="profile.nickName"
-            :style="{ '--image-height': imageHeight }"
-            ref="image"
+            :style="{ '--image-height': `-${profile.height / 2}px` }"
         />
     </a>
 </template>
@@ -34,22 +32,7 @@ export default {
             let date = new Date(this.profile.timestamp)
             return date.toLocaleString()
         },
-    },
-    methods: {
-        setImageHeight() {
-            if (this.imageHeight !== 0) {
-                return
-            }
-            const $image: HTMLImageElement = this.$refs.image
-
-            // check loaded
-            if (!$image.complete) {
-                return
-            }
-
-            this.imageHeight = `-${$image.offsetHeight}px`
-        },
-    },
+    }
 }
 </script>
 
@@ -75,7 +58,7 @@ export default {
         left: 0;
         top: 0;
         width: 100%;
-        transition: transform 1s;
+        transition: transform 1.5s;
     }
 
     .gif {
