@@ -3,7 +3,7 @@
         class="profile-item"
         :href="profile.githubUrl"
         target="_blank"
-        ref="nofollow"
+        rel="nofollow"
     >
         <div class="mask">
             <h3 class="nickname">{{ profile.nickName }}</h3>
