@@ -1,6 +1,6 @@
 <template>
     <section class="header">
-        <h1 class="title">Awesome Github Profile</h1>
+        <h1 class="title">Awesome GitHub Profile READMEs</h1>
         <nav class="navbar">
             <NavItem
                 v-for="category in categories"
