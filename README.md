@@ -1,4 +1,4 @@
-# Awesome Github Profile
+# Awesome GitHub Profile README
 
 *A website of awesome Github Profile READMEs*
 
