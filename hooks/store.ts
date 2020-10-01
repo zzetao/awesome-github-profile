@@ -34,21 +34,23 @@ const StoreSymbol = Symbol('Store')
 const convertImageUrl = (path) =>
     `https://raw.githubusercontent.com/zzetao/awesome-github-profile-data/master/${path}`
 const defaultCategories = [
-    { categoryName: 'All', list: [] },
-    { categoryName: 'Github Actions 🤖', list: [] },
-    { categoryName: 'Game Mode 🚀', list: [] },
-    { categoryName: 'Code Mode 👨🏽‍💻', list: [] },
-    { categoryName: 'Dynamic Realtime 💫', list: [] },
-    { categoryName: 'Descriptive 🗒', list: [] },
-    { categoryName: 'Simple but Innovative Ones 🤗', list: [] },
-    { categoryName: 'Typing.. Mode 🎰', list: [] },
-    { categoryName: 'Anime 👾', list: [] },
-    { categoryName: 'Minimalistic ✨', list: [] },
-    { categoryName: 'GIFS 👻', list: [] },
-    { categoryName: 'Just Images 🎭', list: [] },
-    { categoryName: 'Badges 🎫', list: [] },
-    { categoryName: 'Fancy Fonts 🖋', list: [] },
-    { categoryName: 'Icons 🎯', list: [] },
+    {categoryName: "All", list: [] },
+    {categoryName: "Github Actions 🤖", list: [] },
+    {categoryName: "Game Mode 🚀", list: [] },
+    {categoryName: "Code Mode 👨🏽‍💻", list: [] },
+    {categoryName: "Dynamic Realtime 💫", list: [] },
+    {categoryName: "A Little Bit of Everything 😃", list: [] },
+    {categoryName: "Descriptive 🗒", list: [] },
+    {categoryName: "Simple but Innovative Ones 🤗", list: [] },
+    {categoryName: "Typing.. Mode 🎰", list: [] },
+    {categoryName: "Anime 👾", list: [] },
+    {categoryName: "Minimalistic ✨", list: [] },
+    {categoryName: "GIFS 👻", list: [] },
+    {categoryName: "Just Images 🎭", list: [] },
+    {categoryName: "Badges 🎫", list: [] },
+    {categoryName: "Fancy Fonts 🖋", list: [] },
+    {categoryName: "Icons 🎯", list: [] },
+    {categoryName: "Retro 😎", list: [] },
 ]
 
 export const useStoreProvide = () => {
