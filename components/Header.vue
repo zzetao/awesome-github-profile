@@ -55,5 +55,5 @@ export default defineComponent({
     width: 900px;
     margin: 0 auto;
     margin-bottom: 30px;
-}</style
->2
+}
+</style>

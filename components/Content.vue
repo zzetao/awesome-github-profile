@@ -2,11 +2,15 @@
 	<Loading v-if="loading" />
 	<!-- eslint-disable vue/valid-template-root -->
 	<section class="content">
-		<ProfileItem
-			v-for="profile in profileList"
-			:key="profile.githubUrl"
-			:profile="profile"
-		/>
+    <ProfileItem
+        v-for="profile in profileList"
+        :key="profile.githubUrl"
+        :profile="profile"
+    />
+    <div class="no-results" v-if="profileList.length == 0 && !loading">
+      No results found
+    </div>
+
 	</section>
 </template>
 
@@ -38,5 +42,13 @@ export default defineComponent({
 	width: 850px;
 	margin: 0 auto;
 	padding: 60px 0;
+}
+.no-results {
+  font-size: 16px;
+  color: #999;
+  text-align: center;
+  padding: 40px 0;
+  width: 100%;
+  text-transform: uppercase;
 }
 </style>

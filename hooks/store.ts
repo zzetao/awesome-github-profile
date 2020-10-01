@@ -19,6 +19,7 @@ interface ICategory {
 
 interface IStore {
     selectedCategory: string
+    search: string
     loading: boolean
     errorText: string
     categories: ICategory[]
@@ -26,6 +27,7 @@ interface IStore {
     setLoading: (toggle: boolean) => boolean
     fetchCategories: () => Promise<void>
     setSelectedCategory: (title: string) => string
+    setSearch: (title: string) => string
 }
 
 const StoreSymbol = Symbol('Store')
@@ -53,26 +55,56 @@ export const useStoreProvide = () => {
     const loading = ref<boolean>(false)
     const errorText = ref<string>(null)
     const selectedCategory = ref<string>('All')
+    const search = ref<string>('')
     const categories = ref<ICategory[]>(defaultCategories)
 
     const profileList = computed<IProfile[]>(() => {
-        if (selectedCategory.value === 'All') {
-            return categories.value.reduce(
-                (prev, cur) => [...prev, ...cur.list],
-                []
-            )
-        } else {
-            return (
-                categories.value.find(
+
+        if (search.value) {
+            let profiles = []
+
+            if (selectedCategory.value === 'All') {
+                categories.value.forEach(function(category, index) {
+                    category.list.forEach(function(profile) {
+                        if (profile.nickName.toLowerCase().includes(search.value.toLowerCase()) || profile.githubUrl.toLowerCase().includes(search.value.toLowerCase())) {
+                            profiles.push(profile)
+                        }
+                    })
+                })
+            } else {
+                let category = categories.value.find(
                     (c) => c.categoryName === selectedCategory.value
-                ).list || []
-            )
+                ).list || [];
+
+                category.forEach(function(profile) {
+                    if (profile.nickName.toLowerCase().includes(search.value.toLowerCase()) || profile.githubUrl.toLowerCase().includes(search.value.toLowerCase())) {
+                        profiles.push(profile)
+                    }
+                })
+            }
+
+            return profiles;
+        } else {
+            if (selectedCategory.value === 'All') {
+                return categories.value.reduce(
+                    (prev, cur) => [...prev, ...cur.list],
+                    []
+                )
+            } else {
+                return (
+                    categories.value.find(
+                        (c) => c.categoryName === selectedCategory.value
+                    ).list || []
+                )
+            }
         }
     })
 
     const setLoading = (toggle: boolean) => (loading.value = toggle)
     const setSelectedCategory = (name: string) =>
         (selectedCategory.value = name)
+    const setSearch = (name: string) =>
+        (search.value = name)
 
     const fetchCategories = async () => {
         setLoading(true)
@@ -109,10 +141,12 @@ export const useStoreProvide = () => {
         errorText,
         categories,
         selectedCategory,
+        search,
         profileList,
         setLoading,
         fetchCategories,
         setSelectedCategory,
+        setSearch,
     })
 }
 
