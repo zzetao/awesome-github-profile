@@ -1,7 +1,6 @@
 <template>
     <div class="main">
         <Header />
-        <Search />
         <Content />
         <StarTip />
     </div>
@@ -9,7 +8,6 @@
 
 <script lang="ts">
 import Header from './components/Header.vue'
-import Search from './components/Search.vue'
 import Content from './components/Content.vue'
 import StarTip from './components/StarTip.vue'
 import { useStoreProvide, useStoreInject } from './hooks/store'
@@ -18,7 +16,6 @@ export default {
     name: 'App',
     components: {
         Header,
-        Search,
         Content,
         StarTip,
     },

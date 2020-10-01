@@ -1,6 +1,6 @@
 <template>
     <section class="search">
-      <input type="text" name="q" class="input" @change="setSearch($event.target.value)" placeholder="Search..">
+      <input type="text" name="q" class="input" @change="setSearch($event.target.value)" placeholder="Search...">
     </section>
 </template>
 
@@ -28,13 +28,20 @@ export default defineComponent({
 <style lang="less" scoped>
 .search {
     background-color: #fdfdfd;
-    border-bottom: 1px solid #ebebeb;
-    padding: 30px;
+    padding-bottom: 30px;
     input {
-      display: block;
-      width: 700px;
-      margin: 0px auto;
-      height: 30px;
+        display: block;
+        width: 400px;
+        margin: 0px auto;
+        height: 30px;
+        padding: 6px 30px;
+        border: 1px solid #ebebeb;
+        border-radius: 4px;
+
+        &:focus {
+            outline: none;
+            border-color: #ddd;
+        }
     }
 }
 </style>
