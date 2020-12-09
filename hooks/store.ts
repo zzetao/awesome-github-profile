@@ -1,7 +1,9 @@
 import { provide, inject, ref, computed } from 'vue'
 
-const api =
-    'https://raw.githubusercontent.com/zzetao/awesome-github-profile-data/master/data.json'
+// vite Does not support process.env custom env
+const host = window.location.host.indexOf('github.io') === -1 ? 'https://awesome-github-profile-data.vercel.app/' : 'https://raw.githubusercontent.com/zzetao/awesome-github-profile-data/master/'
+
+const dataApi = host + 'data.json'
 
 interface IProfile {
     githubUrl: string
@@ -31,8 +33,8 @@ interface IStore {
 }
 
 const StoreSymbol = Symbol('Store')
-const convertImageUrl = (path) =>
-    `https://raw.githubusercontent.com/zzetao/awesome-github-profile-data/master/${path}`
+const convertImageUrl = (path) => host + path
+
 const defaultCategories = [
     {categoryName: "All", list: [] },
     {categoryName: "Github Actions 🤖", list: [] },
@@ -111,7 +113,7 @@ export const useStoreProvide = () => {
     const fetchCategories = async () => {
         setLoading(true)
 
-        return fetch(api)
+        return fetch(dataApi)
             .then((res) => res.json())
             .then((res) => {
                 setLoading(false)

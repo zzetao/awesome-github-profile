@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/awesome-github-profile/"
+    "build": "vite build --base=/awesome-github-profile/",
+    "build:vercel": "vite build"
   },
   "dependencies": {
     "vue": "^3.0.0-rc.5"
@@ -11,7 +12,7 @@
   "devDependencies": {
     "@vue/compiler-sfc": "^3.0.0-rc.5",
     "less": "^3.12.2",
-    "vite": "^1.0.0-rc.4"
+    "vite": "^1.0.0-rc.13"
   },
   "repository": {
     "type": "git",
