@@ -10,16 +10,18 @@
                 @click="setSelectedCategory(category.categoryName)"
             />
         </nav>
+        <Search />
     </section>
 </template>
 
 <script>
 import NavItem from './NavItem.vue'
+import Search from './Search.vue'
 import { defineComponent } from 'vue'
 import { useStoreInject } from '../hooks/store'
 
 export default defineComponent({
-    components: { NavItem },
+    components: { NavItem, Search },
     setup() {
         const {
             categories,
@@ -55,5 +57,5 @@ export default defineComponent({
     width: 900px;
     margin: 0 auto;
     margin-bottom: 30px;
-}</style
->2
+}
+</style>
