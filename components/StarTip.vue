@@ -1,5 +1,5 @@
 <template>
-    <a class="github-link" href="https://github.com/zzetao/awesome-github-profile">Star on GitHub</a>
+    <a class="github-link" href="https://github.com/zzetao/awesome-github-profile" onclick="window.open('https://github.com/abhisheknaiidu/awesome-github-profile-readme');" >GitHub</a>
 </template>
 
 <script>
