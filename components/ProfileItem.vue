@@ -11,6 +11,7 @@
         </div>
         <div class="gif" v-if="profile.hasGif">GIF</div>
         <img
+            src="../assets/card-placeholder.png"
             v-lazyload="profile.previewImageUrl"
             :alt="profile.nickName"
             :style="{ '--image-height': `-${profile.height / 2}px` }"

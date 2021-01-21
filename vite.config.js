@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const vue = require('@vitejs/plugin-vue')
 
 // https://github.com/vitejs/vite/pull/1218
 function fixFaviconBugPlugin() {
@@ -24,6 +25,7 @@ function fixFaviconBugPlugin() {
 module.exports = {
     assetsDir: 'assets',
     plugins: [
-        fixFaviconBugPlugin()
+        vue(),
+        // fixFaviconBugPlugin()
     ]
 }
