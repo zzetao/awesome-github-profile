@@ -1,6 +1,6 @@
 <template>
     <section class="search">
-      <input type="text" name="q" class="input" @change="setSearch($event.target.value)" placeholder="Search...">
+      <input type="text" name="q" class="input" @input.lazy="setSearch($event.target.value)" placeholder="Search Nickname or Username...">
     </section>
 </template>
 
@@ -34,7 +34,7 @@ export default defineComponent({
         width: 400px;
         margin: 0px auto;
         height: 30px;
-        padding: 6px 30px;
+        padding: 6px 20px;
         border: 1px solid #ebebeb;
         border-radius: 4px;
 
