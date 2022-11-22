@@ -55,6 +55,8 @@ export default defineComponent({
 @media screen and (hover: none) and (pointer: coarse) {
 	.content {
 		display: grid;
+		flex-direction: none;
+		flex-wrap: none;
 		place-items: center;
 		max-width: 900px;
 		margin: 50px 0 0 0;
@@ -64,9 +66,6 @@ export default defineComponent({
 		font-size: 36px;
 		justify-self: center;
 		text-align: center;
-		padding: 40px 0;
-		width: 100%;
-		text-transform: uppercase;
 	}
 }
 </style>
