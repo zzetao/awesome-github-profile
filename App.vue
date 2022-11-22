@@ -37,4 +37,19 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+@media screen and (hover: none) and (pointer: coarse) {
+    .main {
+        display: grid;
+        place-items: center;
+        width: 95%;
+    }
+
+    // "Buy me a coffee" button
+    #bmc-wbtn {
+        width: 80px !important;
+        height: 80px !important;
+        border-radius: 50% !important;
+    }
+}
 </style>

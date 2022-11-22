@@ -51,4 +51,22 @@ export default defineComponent({
   width: 100%;
   text-transform: uppercase;
 }
+
+@media screen and (hover: none) and (pointer: coarse) {
+	.content {
+		display: grid;
+		place-items: center;
+		max-width: 900px;
+		margin: 50px 0 0 0;
+	}
+
+	.no-results {
+		font-size: 36px;
+		justify-self: center;
+		text-align: center;
+		padding: 40px 0;
+		width: 100%;
+		text-transform: uppercase;
+	}
+}
 </style>
