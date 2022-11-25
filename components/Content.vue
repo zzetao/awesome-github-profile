@@ -55,8 +55,7 @@ export default defineComponent({
 @media screen and (orientation: portrait) and (hover: none) and (pointer: coarse) {
 	.content {
 		display: grid;
-		flex-direction: none;
-		flex-wrap: none;
+		justify-content: center;
 		place-items: center;
 		width: 900px;
 		margin: 0;
@@ -64,8 +63,7 @@ export default defineComponent({
 	}
 
 	.no-results {
-		font-size: 36px;
-		justify-self: center;
+		font-size: 26px;
 		text-align: center;
 	}
 }
