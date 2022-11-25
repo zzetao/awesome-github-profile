@@ -44,4 +44,14 @@ export default defineComponent({
         }
     }
 }
+
+@media screen and (hover: none) and (pointer: coarse) {
+    .search {
+        input {
+            width: 550px;
+            height: 40px;
+            font-size: 26px;
+        }
+    }
+}
 </style>
