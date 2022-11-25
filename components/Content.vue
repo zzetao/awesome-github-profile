@@ -58,8 +58,9 @@ export default defineComponent({
 		flex-direction: none;
 		flex-wrap: none;
 		place-items: center;
-		max-width: 900px;
-		margin: 50px 0 0 0;
+		width: 900px;
+		margin: 0;
+		padding: 45px 0;
 	}
 
 	.no-results {

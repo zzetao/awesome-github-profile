@@ -42,7 +42,6 @@ body {
     .main {
         display: grid;
         place-items: center;
-        width: 95%;
     }
 
     // "Buy me a coffee" button
