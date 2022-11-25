@@ -27,7 +27,7 @@ export default {}
     transform-origin: 50% 50%;
 }
 
-@media screen and (hover: none) and (pointer: coarse) {
+@media screen and (orientation: portrait) and (hover: none) and (pointer: coarse) {
     .github-link {
         font-size: 1em;
     }

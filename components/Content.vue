@@ -52,7 +52,7 @@ export default defineComponent({
   text-transform: uppercase;
 }
 
-@media screen and (hover: none) and (pointer: coarse) {
+@media screen and (orientation: portrait) and (hover: none) and (pointer: coarse) {
 	.content {
 		display: grid;
 		flex-direction: none;

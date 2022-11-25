@@ -38,7 +38,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-@media screen and (hover: none) and (pointer: coarse) {
+@media screen and (orientation: portrait) and (hover: none) and (pointer: coarse) {
     .main {
         display: grid;
         place-items: center;

@@ -117,7 +117,7 @@ export default {
     }
 }
 
-@media screen and (hover: none) and (pointer: coarse) {
+@media screen and (orientation: portrait) and (hover: none) and (pointer: coarse) {
     :root {
         --profile-card-height: 516px;
     }

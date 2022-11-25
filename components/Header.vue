@@ -59,7 +59,7 @@ export default defineComponent({
     margin-bottom: 30px;
 }
 
-@media screen and (hover: none) and (pointer: coarse) {
+@media screen and (orientation: portrait) and (hover: none) and (pointer: coarse) {
     .header .title {
         font-size: 36px;
     }

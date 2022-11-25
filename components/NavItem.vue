@@ -44,7 +44,7 @@ export default {
     }
 }
 
-@media screen and (hover: none) and (pointer: coarse) {
+@media screen and (orientation: portrait) and (hover: none) and (pointer: coarse) {
     .nav-item {
         font-size: 24px;
     }
