@@ -46,8 +46,8 @@ body {
 
     // "Buy me a coffee" button
     #bmc-wbtn {
-        width: 80px !important;
-        height: 80px !important;
+        width: 100px !important;
+        height: 100px !important;
         border-radius: 50% !important;
     }
 }
