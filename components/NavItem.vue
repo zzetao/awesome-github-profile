@@ -43,4 +43,10 @@ export default {
         color: #000;
     }
 }
+
+@media screen and (orientation: portrait) and (hover: none) and (pointer: coarse) {
+    .nav-item {
+        font-size: 24px;
+    }
+}
 </style>

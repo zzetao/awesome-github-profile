@@ -14,7 +14,7 @@
             src="../assets/card-placeholder.png"
             v-lazyload="profile.previewImageUrl"
             :alt="profile.nickName"
-            :style="{ '--image-height': `-${profile.height / 2}px` }"
+            :style="{ '--image-height': `-${profile.height}px` }"
         />
     </a>
 </template>
@@ -84,9 +84,8 @@ export default {
         }
 
         img {
-            --image-height: -271px;
             transform: translateY(
-                calc((var(--image-height)) + var(--profile-card-height) - 50px)
+                calc((var(--image-height)) / 2 + var(--profile-card-height) - 50px)
             );
         }
     }
@@ -114,6 +113,24 @@ export default {
             color: #333;
             font-size: 12px;
             margin-top: 8px;
+        }
+    }
+}
+
+@media screen and (orientation: portrait) and (hover: none) and (pointer: coarse) {
+    :root {
+        --profile-card-height: 516px;
+    }
+
+    .profile-item {
+        width: 900px;
+
+        &:hover {
+            img {
+                transform: translateY(
+                    calc(var(--image-height) + var(--profile-card-height) - 130px)
+                );
+            }
         }
     }
 }

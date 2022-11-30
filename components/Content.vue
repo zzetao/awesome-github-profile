@@ -51,4 +51,20 @@ export default defineComponent({
   width: 100%;
   text-transform: uppercase;
 }
+
+@media screen and (orientation: portrait) and (hover: none) and (pointer: coarse) {
+	.content {
+		display: grid;
+		justify-content: center;
+		place-items: center;
+		width: 900px;
+		margin: 0;
+		padding: 45px 0;
+	}
+
+	.no-results {
+		font-size: 26px;
+		text-align: center;
+	}
+}
 </style>
